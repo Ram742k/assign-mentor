@@ -61,6 +61,15 @@ const mentor = require("../models/Mentor");
           } catch (err) {
             response.status(500).json({ message: err.message });
           }
+        },
+
+        getAllMentors: async (request,response) => {
+            try{
+                const mentors = await mentor.find();
+                response.status(200).send(mentors);
+            }catch(err){
+                response.status(500).send(err);
+            }
         }
 
     }

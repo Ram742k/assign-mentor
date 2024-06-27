@@ -12,13 +12,6 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 **Description:** Creates a new mentor.
 
-**Request Body:**
-```json
-{
-  "name": "Mentor Name"
-}
-
-```
 
 ### 2. Create Student 👨‍🎓
 
@@ -26,14 +19,6 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 **Description:** Creates a new student.
 
-**Request Body:**
-
-```json
-{
-  "name": "Student Name"
-}
-
-```
 
 ### 3. Assign Student to Mentor 👫
 
@@ -46,23 +31,6 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 **Description:** Select one mentor and Add multiple Student.
 
-**Request Body:** 
-
-``` json
-{
-  "id": [
-    "60c72b315f1b2c6f1e8b4568",
-    "60c72b355f1b2c6f1e8b4569"
-  ]
-}
-
-```
-
- #### Unassigned Students List
-
- **Endpoint:** `POST /api/unAssignedStudents`
-
-**Description:** A student who has a mentor should not be shown in List
 
 ### 4. Assign or Change Mentor for Particular Student 🔄
 
@@ -70,12 +38,6 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 **Description:** Assigns or changes the mentor for a particular student.
 
-**Request Body:** 
-``` json
-{
-  "mentor": "60c72b2f5f1b2c6f1e8b4567"
-}
-```
 
 ### 5.  Show All Students for a Particular Mentor 📚
 
@@ -83,28 +45,6 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 **Description:** Retrieves all students assigned to a particular mentor.
 
-**Response Body:**
-
-```json
-[
-  {
-    "_id": "60c72b315f1b2c6f1e8b4568",
-    "name": "Student 1",
-    "mentor": "60c72b2f5f1b2c6f1e8b4567",
-    "previousMentors": [],
-    "__v": 0
-  },
-  {
-    "_id": "60c72b355f1b2c6f1e8b4569",
-    "name": "Student 2",
-    "mentor": "60c72b2f5f1b2c6f1e8b4567",
-    "previousMentors": [],
-    "__v": 0
-  }
-]
-
-
-```
 
 ### 6. Show Previously Assigned Mentors for a Particular Student 🕰️
 
@@ -112,24 +52,26 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 **Description:** Retrieves a list of all mentors.
 
-**Response Body:**
+### 7. Get all Mentor List
 
-```json
-[
-  {
-    "_id": "60c72b1e5f1b2c6f1e8b4566",
-    "name": "Mentor 1",
-    "__v": 0
-  },
-  {
-    "_id": "60c72b2f5f1b2c6f1e8b4567",
-    "name": "Mentor 2",
-    "__v": 0
-  }
-]
+**Endpoint:** `GET /api/getAllMentors`
+
+**Description:** Retrieves a list of all mentors.
 
 
-```
+### 8. Get all Student List
+
+**Endpoint:** `GET /api/getAll`
+
+**Description:** Retrieves a list of all students.
+
+
+### 9. Get all Unassigned Student List
+
+**Endpoint:** `GET /api/unAssignedStudents`
+
+**Description:** Retrieves a list of all unassigned students.
+
 
 ## Postman Collection
 
@@ -137,10 +79,7 @@ This API allows you to create mentors and students, assign students to mentors, 
 
 ## Deployment
 
-This project is deployed on [Rendor](https://mentor-student-assignment-app.herokuapp.com/).
-
-
-
+This project is deployed on [Rendor](https://assign-mentor-qpp2.onrender.com/).
 
 ## Acknowledgments
 

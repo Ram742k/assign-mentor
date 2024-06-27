@@ -96,4 +96,3 @@ const studentController = {
     }
 }
 module.exports = studentController;
-    // 创建学生
